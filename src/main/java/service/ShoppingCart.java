@@ -24,10 +24,10 @@ public class ShoppingCart {
         double total = 0;
         for (Food item : items) {
             double pricePerKg = item.getPrice();
-            if (item instanceof Discountable) {
+           
                 double discountPercent = ((Discountable) item).getDiscount();
                 pricePerKg *= (1 - discountPercent / 100);
-            }
+            
             total += item.getAmount() * pricePerKg;
         }
         return total;
